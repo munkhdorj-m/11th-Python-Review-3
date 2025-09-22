@@ -1,70 +1,55 @@
 import pytest
 import inspect
-from assignment import factorial, is_prime, max_min, second_largest, count_pos_neg_zero
+from assignment import sum_even_odd, count_ending_with_5, factorial_list, count_occurrences
 
 def check_contains_loop(function):
     source = inspect.getsource(function)
     return 'for' in source or 'while' in source
 
 
-# Exercise 1: Factorial using loop
-@pytest.mark.parametrize("n, expected", [
-    (5, 120),
-    (0, 1),
-    (7, 5040),
-    (3, 6),
-    (1, 1)
-])
-def test1(n, expected):
-    assert factorial(n) == expected
-    assert check_contains_loop(factorial)
-
-
-# Exercise 2: Prime check using loop
-@pytest.mark.parametrize("n, expected", [
-    (7, True),
-    (12, False),
-    (1, False),
-    (2, True),
-    (29, True),
-    (30, False)
-])
-def test2(n, expected):
-    assert is_prime(n) == expected
-    assert check_contains_loop(is_prime)
-
-
-# Exercise 3: Max and Min in a list using loop
+# Exercise 1: Sum of even and odd numbers
 @pytest.mark.parametrize("lst, expected", [
-    ([3, 7, 2, 9, 5], [9, 2]),
-    ([10, -4, 0, 8], [10, -4]),
-    ([1, 1, 1, 1], [1, 1]),
-    ([-5, -2, -9, -1], [-1, -9])
+    ([1, 2, 3, 4, 5], [6, 9]),
+    ([10, 11, 12, 13], [22, 24]),
+    ([0, 1, 2], [2, 1]),
+    ([5, 7, 9], [0, 21])
+])
+def test1(lst, expected):
+    assert sum_even_odd(lst) == expected
+    assert check_contains_loop(sum_even_odd)
+
+
+# Exercise 2: Count numbers ending with 5
+@pytest.mark.parametrize("lst, expected", [
+    ([5, 15, 23, 25, 40], 3),
+    ([1, 2, 3, 4, 6], 0),
+    ([5, 55, 105], 3),
+    ([10, 20, 30], 0)
+])
+def test2(lst, expected):
+    assert count_ending_with_5(lst) == expected
+    assert check_contains_loop(count_ending_with_5)
+
+
+# Exercise 3: Factorial of each number in list
+@pytest.mark.parametrize("lst, expected", [
+    ([3, 4, 5], [6, 24, 120]),
+    ([0, 1, 2], [1, 1, 2]),
+    ([6, 3], [720, 6]),
+    ([1, 1, 1], [1, 1, 1])
 ])
 def test3(lst, expected):
-    assert max_min(lst) == expected
-    assert check_contains_loop(max_min)
+    assert factorial_list(lst) == expected
+    assert check_contains_loop(factorial_list)
 
 
-# Exercise 4: Second largest number using loop
+# Exercise 4: Count occurrences of each number
 @pytest.mark.parametrize("lst, expected", [
-    ([3, 7, 2, 9, 5], 7),
-    ([10, 10, 8, 5], 10),
-    ([1, 2, 3, 4, 5], 4),
-    ([5, 5, 5], 5)
+    ([1, 2, 2, 3, 1, 4, 2], {1: 2, 2: 3, 3: 1, 4: 1}),
+    ([5, 5, 5, 5], {5: 4}),
+    ([1, 2, 3], {1: 1, 2: 1, 3: 1}),
+    ([0, 0, 0, 1], {0: 3, 1: 1})
 ])
 def test4(lst, expected):
-    assert second_largest(lst) == expected
-    assert check_contains_loop(second_largest)
-
-
-# Exercise 5: Count positive, negative, zero using loop
-@pytest.mark.parametrize("lst, expected", [
-    ([3, -2, 0, 5, -1], [2, 2, 1]),
-    ([0, 0, 0], [0, 0, 3]),
-    ([-5, 2, 7, -1, 0, 0], [2, 2, 2]),
-    ([1, -1, 2, -2, 0], [2, 2, 1])
-])
-def test5(lst, expected):
-    assert count_pos_neg_zero(lst) == expected
-    assert check_contains_loop(count_pos_neg_zero)
+    assert count_occurrences(lst) == expected
+    assert check_contains_loop(count_occurrences)
