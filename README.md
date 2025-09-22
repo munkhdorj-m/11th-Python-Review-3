@@ -1,4 +1,4 @@
-# Python Review 2
+# Python Review 3
 
 Python Review PDF:
 https://drive.google.com/file/d/1_Spi5yo7H50BZ933mYh-zUveuMAroKe4/view?usp=sharing
@@ -9,18 +9,15 @@ https://drive.google.com/file/d/1_Spi5yo7H50BZ933mYh-zUveuMAroKe4/view?usp=shari
 
 **Problem:**
 
-Input a number n and calculate n! (factorial) using a loop.
+Calculate the sum of even numbers and the sum of odd numbers from a given list.
 
 **Example:**
 
-    Input: 5  
-    Output: 120   # 5*4*3*2*1
+    Input: [1, 2, 3, 4, 5]  
+    Output: [6, 9]
     
-    Input: 0  
-    Output: 1
-
-    Input: 7  
-    Output: 5040
+    Input: [10, 11, 12, 13]  
+    Output: [22, 24]
 
 ---
 
@@ -28,18 +25,15 @@ Input a number n and calculate n! (factorial) using a loop.
 
 **Problem:**
 
-Input a number and check whether it is prime using a loop.
+Count how many numbers end with 5 from a given list.
 
 **Example:**
 
-    Input: 7  
-    Output: True
+    Input: [5, 15, 23, 25, 40]  
+    Output: 3
     
-    Input: 12  
-    Output: False
-    
-    Input: 1  
-    Output: False
+    Input: [1, 2, 3, 4, 6]  
+    Output: 0
 
 
 ---
@@ -48,18 +42,16 @@ Input a number and check whether it is prime using a loop.
 
 **Problem:**
 
-Find the maximum and minimum in a list of numbers using loops.
+Create a new list containing the factorial of each number from a given list.
 
 **Example**
 
-    Input: [3, 7, 2, 9, 5]  
-    Output: [9, 2]  # Max:9, Min:2
+    Input: [3, 4, 5]  
+    Output: [6, 24, 120]
     
-    Input: [10, -4, 0, 8]  
-    Output: [10, -4]
-    
-    Input: [1, 1, 1, 1]  
-    Output: [1, 1]
+    Input: [0, 1, 2]  
+    Output: [1, 1, 2]
+
 
 
 ---
@@ -68,37 +60,73 @@ Find the maximum and minimum in a list of numbers using loops.
 
 **Problem:**
 
-Input a list of numbers and find the second largest number using a loop.
+Count how many times each number appears in a given list.
 
 **Example**
 
-    Input: [3, 7, 2, 9, 5]  
-    Output: 7
+    Input: [1, 2, 2, 3, 1, 4, 2]  
+    Output: {1: 2, 2: 3, 3: 1, 4: 1}
     
-    Input: [10, 10, 8, 5]  
-    Output: 10
-
-    Input: [1, 2, 3, 4, 5]  
-    Output: 4
+    Input: [5, 5, 5, 5]  
+    Output: {5: 4}
+    
+    Input: [1, 2, 3]  
+    Output: {1: 1, 2: 1, 3: 1}
     
 ---
 
-## Exercise 5
+## Exercise 5 (Optional)
 
 **Problem:**
+Make a game where the program picks a random number between 1 and 20.
+The user keeps guessing until the correct number is guessed.
 
-Input n numbers into a list. Count how many numbers are positive, negative, and zero using a loop.
 
 **Example**
 
-    Input: [3, -2, 0, 5, -1]  
-    Output: [2, 2, 1]  # Positive:2, Negative:2, Zero:1
-    
-    Input: [0, 0, 0]  
-    Output: [0, 0, 3]
+    Program: I have chosen a number between 1 and 20. Guess it!
+    User: 10
+    Program: Too high!
+    User: 5
+    Program: Too low!
+    User: 7
+    Program: Correct! You guessed it in 3 tries.
 
-    Input: [-5, 2, 7, -1, 0, 0]  
-    Output: [2, 2, 2]
+    
+---
+
+## Exercise 6 (Optional)
+
+**Problem:**
+Bulls and Cows game:
+
+- The computer generates a random 3-digit number (with non-repeating digits).
+- The user guesses the number.
+- After each guess, the program tells:
+    - Bulls: Digits that are correct and in the right place.
+    - Cows: Digits that are correct but in the wrong place.
+- The game continues until the user guesses correctly (3 bulls).
+
+**Example**
+
+    Computer has chosen a 3-digit number. Try to guess it!
+    
+    Enter guess: 123
+    Result: 1 bull(s), 1 cow(s)
+    
+    Enter guess: 456
+    Result: 0 bull(s), 0 cow(s)
+    
+    Enter guess: 321
+    Result: 0 bull(s), 3 cow(s)
+    
+    Enter guess: 135
+    Result: 1 bull(s), 2 cow(s)
+    
+    Enter guess: 159
+    Result: 3 bull(s), 0 cow(s)
+    
+    Congratulations! You guessed the number: 159
     
 ---
 
